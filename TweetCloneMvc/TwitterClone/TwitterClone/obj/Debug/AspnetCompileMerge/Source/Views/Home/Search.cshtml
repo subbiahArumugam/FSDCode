@@ -1,0 +1,35 @@
+﻿@model TwitterClone.Models.UserModel
+
+@{
+    ViewBag.Title = "Searched User";
+}
+
+<h2>Search</h2>
+<div id="divfollower">
+    <div  style="width:100%"><span>UserID:</span><span id="spnfolloweruserid">@Model.UserName</span></div>
+    <div  style="width:100%"><span>Full name:</span><span>@Model.FullName</span></div>
+   
+</div>
+<div id="status"></div>
+
+@section scripts {
+    <script>
+        $(function () {
+
+   // $(document).ready(function () {
+        $("#follow").on ('click', '#follow', function (e) {
+            var followerid = 'test'
+            alert(followerid);
+            $.post('@Url.Action("AddFollower", "Home")', { followerid: followerid }, function (data) {
+                if (data == "sucess") {
+                    $("status").html("You are now following user" + followerid);
+                }
+            });
+    
+        });
+            e.defaultPrevented();
+
+     //   
+    });
+</script>
+    }

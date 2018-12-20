@@ -1,0 +1,8 @@
+E:\FSD\TweetCloneMvc\TweetCloneDataLayer\TweetDataLayer\bin\Debug\TweetDataLayer.dll.config
+E:\FSD\TweetCloneMvc\TweetCloneDataLayer\TweetDataLayer\bin\Debug\TweetDataLayer.dll
+E:\FSD\TweetCloneMvc\TweetCloneDataLayer\TweetDataLayer\bin\Debug\TweetDataLayer.pdb
+E:\FSD\TweetCloneMvc\TweetCloneDataLayer\TweetDataLayer\bin\Debug\EntityFramework.dll
+E:\FSD\TweetCloneMvc\TweetCloneDataLayer\TweetDataLayer\bin\Debug\EntityFramework.xml
+E:\FSD\TweetCloneMvc\TweetCloneDataLayer\TweetDataLayer\obj\Debug\TweetDataLayer.dll
+E:\FSD\TweetCloneMvc\TweetCloneDataLayer\TweetDataLayer\obj\Debug\TweetDataLayer.pdb
+E:\FSD\TweetCloneMvc\TweetCloneDataLayer\TweetDataLayer\obj\Debug\TweetDataLayer.csprojResolveAssemblyReference.cache

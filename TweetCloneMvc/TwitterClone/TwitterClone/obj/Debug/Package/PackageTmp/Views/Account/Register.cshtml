@@ -1,0 +1,47 @@
+﻿@model TwitterClone.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>Create a new account.</h2>
+</hgroup>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Registration Form</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password)
+            </li>
+            <li>
+                .@Html.LabelFor(m => m.FullName)
+                @Html.PasswordFor(m => m.FullName)
+            </li>
+            
+            <li>
+                @Html.LabelFor(m => m.Email)
+                @Html.PasswordFor(m => m.Email)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Joined)
+                @Html.PasswordFor(m => m.Joined)
+            </li>
+
+        </ol>
+        <input type="submit" value="Register" />
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model TwitterClone.Models.TweetViewModel
+
+<div id="MainContent">
+    <div style="width: 30%; height: 100%; float: left; position: fixed">
+        <div>
+            <input type="text" id="usersearch" style="width: 150px; height: 20px; border-radius: 10px;" />
+            <button id="search" style="width: 80px; height: 30px; border-radius: 5px; background-color: blue; color: aqua">search</button>
+             <button id="btnfollow" style="width: 60px; display:none; height: 30px; border-radius: 5px; background-color: blue; color: aqua">follow</button>
+        </div>
+        <div>
+            <p>
+                followers
+
+                 <span>(@ViewBag.FollowerCount) </span>
+
+            </p>
+        </div>
+        <div>
+            <p>
+                Following
+
+                <span>(@ViewBag.FollowingCount) </span>
+            </p>
+        </div>
+        <div>
+            <p>
+                tweet
+
+                @if (Model != null && Model.UserTweetList != null)
+                {
+                    var count = Model.UserTweetList.Count;
+                    <span>(@count) </span>
+                }
+            </p>
+        </div>
+
+    </div>
+
+
+    <div style="width: 70%; height: 100%; float: right;" id="rightcontent">
+        <div id="TweetId" style="height: 10%">
+            <textarea id="txttweetdata" style="height: 100%; width: 80%;"></textarea>
+            <button id="twweetSend" style="width: 60px; height: 30px; border-radius: 5px; background-color: blue; color: aqua">tweet</button>
+
+        </div>
+        @foreach (var tweet in Model.UserTweetList)
+        {
+            <div>
+                @tweet.UserId:
+            </div>
+            <div style="background-color: #fff;">
+                @tweet.Message
+            </div>
+        }
+
+    </div>
+    x
+
+
+</div>
+<script>
+
+    $(document).ready(function () {
+       
+        $(document).on('click', '#btnfollow', function () {
+          
+            var followerid = $("#spnfolloweruserid").html();
+            alert(followerid);
+            $.post('@Url.Action("AddFollower", "Home")', { followerid: followerid }, function (data) {
+                if (data == "sucess") {
+                    $("status").html("You are now following user" + followerid);
+                }
+            });
+    
+      
+    });
+    $("#twweetSend").click(function () {
+        var message = $("#txttweetdata").val();
+        $.post('@Url.Action("tweet", "Home")', { tweetData: message }, function (data) {
+            });
+
+        });
+        $("#search").click(function () {
+            var usersearch = $("#usersearch").val();
+            $.post('@Url.Action("search", "Home")', { usersearch: usersearch }, function (data) {
+                $("#rightcontent").html(data);
+                $("#btnfollow").css('display', 'block');
+            });
+        });
+        });
+</script>

@@ -1,0 +1,9 @@
+E:\FSD\TweetCloneMvc\TweetCloneBusinessLayer\TweetCloneBusinessLayer\bin\Debug\TweetCloneBusinessLayer.dll
+E:\FSD\TweetCloneMvc\TweetCloneBusinessLayer\TweetCloneBusinessLayer\bin\Debug\TweetCloneBusinessLayer.pdb
+E:\FSD\TweetCloneMvc\TweetCloneBusinessLayer\TweetCloneBusinessLayer\obj\Debug\TweetCloneBusinessLayer.dll
+E:\FSD\TweetCloneMvc\TweetCloneBusinessLayer\TweetCloneBusinessLayer\obj\Debug\TweetCloneBusinessLayer.pdb
+E:\FSD\TweetCloneMvc\TweetCloneBusinessLayer\TweetCloneBusinessLayer\bin\Debug\TweetDataLayer.dll
+E:\FSD\TweetCloneMvc\TweetCloneBusinessLayer\TweetCloneBusinessLayer\bin\Debug\EntityFramework.dll
+E:\FSD\TweetCloneMvc\TweetCloneBusinessLayer\TweetCloneBusinessLayer\bin\Debug\TweetDataLayer.pdb
+E:\FSD\TweetCloneMvc\TweetCloneBusinessLayer\TweetCloneBusinessLayer\bin\Debug\EntityFramework.xml
+E:\FSD\TweetCloneMvc\TweetCloneBusinessLayer\TweetCloneBusinessLayer\obj\Debug\TweetCloneBusinessLayer.csprojResolveAssemblyReference.cache

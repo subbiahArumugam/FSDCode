@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterClone", "TwitterClone\TwitterClone.csproj", "{7BFA08AE-62B2-47EA-A90D-9C30347A4453}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterClone.Tests", "TwitterClone.Tests\TwitterClone.Tests.csproj", "{EC96D0D5-09A1-4298-8251-C27B287BCE27}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BFA08AE-62B2-47EA-A90D-9C30347A4453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BFA08AE-62B2-47EA-A90D-9C30347A4453}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BFA08AE-62B2-47EA-A90D-9C30347A4453}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BFA08AE-62B2-47EA-A90D-9C30347A4453}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC96D0D5-09A1-4298-8251-C27B287BCE27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC96D0D5-09A1-4298-8251-C27B287BCE27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC96D0D5-09A1-4298-8251-C27B287BCE27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC96D0D5-09A1-4298-8251-C27B287BCE27}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

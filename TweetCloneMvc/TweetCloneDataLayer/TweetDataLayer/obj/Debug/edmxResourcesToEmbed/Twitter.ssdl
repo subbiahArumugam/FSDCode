@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TwitterModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TwitterModelStoreContainer">
+    <EntitySet Name="Following" EntityType="TwitterModel.Store.Following" store:Type="Tables" store:Schema="dbo" store:Name="Following">
+      <DefiningQuery>SELECT 
+      [Following].[user_id] AS [user_id], 
+      [Following].[following_id] AS [following_id]
+      FROM [dbo].[Following] AS [Following]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Person" EntityType="TwitterModel.Store.Person" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tweet" EntityType="TwitterModel.Store.Tweet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Tweet_Tweet" Association="TwitterModel.Store.FK_Tweet_Tweet">
+      <End Role="Tweet" EntitySet="Tweet" />
+      <End Role="Tweet1" EntitySet="Tweet" />
+    </AssociationSet>
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Twitter.dbo.Following' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Following">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="following_id" />
+    </Key>
+    <Property Name="user_id" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="following_id" Type="varchar" Nullable="false" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="password" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="fullname" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="email" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="joined" Type="datetime" Nullable="false" />
+    <Property Name="active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tweet">
+    <Key>
+      <PropertyRef Name="tweet_id" />
+    </Key>
+    <Property Name="tweet_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="message" Type="varchar" Nullable="false" MaxLength="140" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Tweet_Tweet">
+    <End Role="Tweet" Type="TwitterModel.Store.Tweet" Multiplicity="1" />
+    <End Role="Tweet1" Type="TwitterModel.Store.Tweet" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Tweet">
+        <PropertyRef Name="tweet_id" />
+      </Principal>
+      <Dependent Role="Tweet1">
+        <PropertyRef Name="tweet_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
