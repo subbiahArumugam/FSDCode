@@ -10,6 +10,7 @@ using TwitterClone.Models;
 
 namespace TwitterClone.Controllers
 {
+//test
     [CustomAuthorize]
     public class HomeController : Controller
     {
